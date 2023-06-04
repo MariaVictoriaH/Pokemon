@@ -56,6 +56,62 @@ header > img {
     border-radius: 4px;
   }
 
+  main{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    padding: 90px;
+    gap: 20px;
+}
+
+main>img{
+    width: 40%;
+    height: 40%;
+}
+
+section{
+    width: 25%;
+    justify-content: center;
+     
+ }
+
+ section, p{
+    padding-top: 45px;
+     
+ }
+
+ main>section>div>a{
+    size: 16px;
+    align-items: center;
+    text-align: center;
+    margin: 5%;
+    color:black;
+    text-decoration: none;
+}
+
+h1 {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 25px;
+    color: #1A202C;
+   
+    
+}
+
+h4 {
+    size: 20px;
+    color: white;
+    width: 152px;
+    height: 32px;
+}
+
+.sectionParrafo {
+    width:515px;
+    size: 16px;
+    color: #1A202C;
+}
+
+
 
 footer {
     display: flex;
