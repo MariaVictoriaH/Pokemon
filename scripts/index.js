@@ -1,24 +1,12 @@
-const mainDarkMode = document.getElementsByTagName('body');
-const parrafoDarkMode = document.getElementsByClassName('.sectionParrafo');
-const btnPrincipal = document.getElementsByClassName('.btnPrincipal');
-const btnDarkMode = document.getElementById('darkMode');
+let toggle = document.getElementById('mode');
 
-
-btnDarkMode.addEventListener('click', function() {
-    if(btnDarkMode.textContent == 'Dark Mode'){
-        btnDarkMode.textContent ='Light Mode';
-        console.log(btnPrincipal);
-        btnPrincipal.style.backgroundColor = '#1A202C';
-        document.body.style.backgroundColor = '#1A202C';
-        document.body.section.color = 'blue';
-        
-        parrafoDarkMode[2].style.color = '#FF0000';
+toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    if(toggle.textContent == 'Dark Mode'){
+        toggle.textContent = 'Light Mode'
     }else{
-        btnDarkMode.textContent ='Dark Mode';
-        document.body.style.backgroundColor = '#FFFFFF';
-        parrafoDarkMode.color = "red";
+        toggle.textContent = 'Dark Mode'
     }
-    
-   /*mainDarkMode.style.backgroundcolor = "#1A202C"; */
+    console.log(toggle);
+})
 
-});

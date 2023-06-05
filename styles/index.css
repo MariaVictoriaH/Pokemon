@@ -4,6 +4,10 @@
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 
+:root {
+    --primary-dark: red;
+  }
+
 header {
     justify-content: space-between;
     background-color: #306bb3;
@@ -49,14 +53,38 @@ header > img {
 
 .btnPrincipal {
     background-color: white;
-    color: #306bb3;
     border: none;
     min-width: 82px;
     min-height: 38px;
     border-radius: 4px;
   }
 
-  main{
+body{
+    --primary-dark: black;
+    --secondary-dark: white;
+    --bg-light:  white;
+}
+
+body.dark{
+    --primary-dark:white;
+    --secondary-dark: black;
+    --bg-light: black;
+}
+
+.primary-dark{
+    color: var(--primary-dark);
+}
+
+.secondary-dark{
+    color: var(--secondary-dark);
+}
+
+.bg-light{
+    background-color: var(--bg-light);
+    
+}
+
+main{
     display: flex;
     flex-direction: row;
     justify-content:space-around;
@@ -75,10 +103,13 @@ section{
      
  }
 
- section, p{
-    padding-top: 45px;
-     
- }
+ .dark{
+  color:white;
+}
+
+.light{
+    color:black;
+}
 
  main>section>div>a{
     size: 16px;
@@ -108,8 +139,7 @@ h4 {
 .sectionParrafo {
     width:515px;
     size: 16px;
-    color: #1A202C;
-}
+ }
 
 
 
