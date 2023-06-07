@@ -7,6 +7,5 @@ toggle.addEventListener('click', () => {
     }else{
         toggle.textContent = 'Dark Mode'
     }
-    console.log(toggle);
 })
 

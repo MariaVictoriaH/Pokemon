@@ -5,8 +5,44 @@
 }
 
 :root {
-    --primary-dark: red;
-  }
+    --light: #ffffff;
+    --dark: #1A202C;
+    
+    --soft-blue:#486284;
+    --btn-color:#306BB3;
+    
+    --black-russian: #FFFFFF;
+    --soft-blue:#FFFFFF;
+    
+    
+ }
+
+ body{
+     background: var(--light);
+     display: grid;
+     margin: 0;
+     --btn-bg: #FFFFFF;
+     --btn-fontcolor:#306BB3;
+     --font-color: #1A202C;
+}
+
+body.dark{
+    background: var(--dark);
+    --btn-bg: #1A202C;
+    --btnLinks-bg:#FFFFFF;
+    --btn-fontcolor:#FFFFFF;
+    --font-color: #FFFFFF;
+}
+
+.btnPrincipal {
+  border: none;
+  min-width: 82px;
+  min-height: 38px;
+  border-radius: 4px;
+  background-color: var(--btn-bg);
+  color: var(--btn-fontcolor);
+}
+
 
 header {
     justify-content: space-between;
@@ -51,39 +87,6 @@ header > img {
     list-style: none;
 }
 
-.btnPrincipal {
-    background-color: white;
-    border: none;
-    min-width: 82px;
-    min-height: 38px;
-    border-radius: 4px;
-  }
-
-body{
-    --primary-dark: black;
-    --secondary-dark: white;
-    --bg-light:  white;
-}
-
-body.dark{
-    --primary-dark:white;
-    --secondary-dark: black;
-    --bg-light: black;
-}
-
-.primary-dark{
-    color: var(--primary-dark);
-}
-
-.secondary-dark{
-    color: var(--secondary-dark);
-}
-
-.bg-light{
-    background-color: var(--bg-light);
-    
-}
-
 main{
     display: flex;
     flex-direction: row;
@@ -93,24 +96,13 @@ main{
 }
 
 main>img{
-    width: 40%;
-    height: 40%;
+    width: 638px;
+    height: 508px;
 }
 
-section{
-    width: 25%;
-    justify-content: center;
-     
- }
-
- .dark{
-  color:white;
+main section p {
+    color: var(--font-color);
 }
-
-.light{
-    color:black;
-}
-
  main>section>div>a{
     size: 16px;
     align-items: center;
@@ -120,28 +112,31 @@ section{
     text-decoration: none;
 }
 
+section{
+    width: 25%;
+    justify-content: center;
+}
+
 h1 {
     font-weight: bold;
     text-transform: uppercase;
     font-size: 25px;
-    color: #1A202C;
-   
+    color: var(--font-color);
     
-}
-
-h4 {
-    size: 20px;
-    color: white;
-    width: 152px;
-    height: 32px;
 }
 
 .sectionParrafo {
     width:515px;
     size: 16px;
+    color: var(--font-color);
  }
 
-
+ .btnLinks {
+    width: 48px;
+    height: 150px;
+    border-radius: 4px;
+    background: var(--btnLinks-bg);
+ }
 
 footer {
     display: flex;
