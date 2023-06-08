@@ -2,10 +2,21 @@ const listPokemon = document.getElementById("containerPokemon");
 const btnMoreCards = document.getElementById('btnMoreCards');
 const pokemones = [];
 
+let toggle = document.getElementById('mode');
 let loadCards = 8;
 let offSet = 1;
 let urlApi = "https://pokeapi.co/api/v2/pokemon/";
 
+
+
+toggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  if(toggle.textContent == 'Dark Mode'){
+      toggle.textContent = 'Light Mode'
+  }else{
+      toggle.textContent = 'Dark Mode'
+  }
+})
 
 
 
