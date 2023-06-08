@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/index.css" />
-    <title>Pokemon</title>
+    <link rel="stylesheet" href="./styles/buyCarsLight.css" />
+    <title>Buy cars Light</title>
 </head>
 <body>
     <header>
@@ -22,29 +22,38 @@
             </div>
     </header>
     <main>
+        <h1>Checkout Out Pokemon Cards</h1>
+        <br />
+        <p>The Pokemon Go expansion for the Pokemon Trading Card</p>
+        <p>Game will release soon.</p>
+        <br />
+        <div class="tab">
+          <button class="tablinks" onclick="selectTab(event, 'All')">All</button>
+          <button class="tablinks" onclick="selectTab(event, 'Air')">Air</button>
+          <button class="tablinks" onclick="selectTab(event, 'Fire')">Fire</button>
+          <button class="tablinks" onclick="selectTab(event, 'Water')">Water</button>
+          <div class="line"></div>
+        </div>
         <section>
-            <p>Discover the treasures awaiting for you...</p>
-            <br>
-            <h1>Pokemon Action Figures, Toys and cards</h1>
-            <br>
-            <p class="sectionParrafo">
-              Pokémon is a media franchise owned by video game giant Nintendo and
-              created by Satoshi Tajiri around 1995. Originally released as a pair
-              of interlinkable Game Boy role-playing video games, Pokémon has since
-              become the 2nd most successful and lucrative video game-based media
-              franchise in the world, behind only Nintendo's Mario series.
-            </p>
-            <br>
-            <div>
-              <a class="btnLinks" href="/Pokemon/blog.html">Go to our blog</a>
-              <a class="btnLinks" href="/Pokemon/buyCarsLight.html">Buy cards</a>
-            </div>
-          </section>
-              <img
-              src="./assets/ash-leaves-anime.png"
-              alt="todos los personajes de pokémon"
-            />
-    </main>
+          <div id="All" class="tabcontent active">
+            <div class="container" id="containerPokemon"></div>
+          </div>
+          <div id="Air" class="tabcontent">
+            <h3>FILTRAR POKEMONES AIR</h3>
+          </div>
+          <div id="Fire" class="tabcontent">
+            <h3>FILTRAR POKEMONES FIRE</h3>
+          </div>
+          <div id="Water" class="tabcontent">
+            <h3>FILTRAR POKEMONES WATER</h3>
+          </div>
+         </section>
+        <div>
+          <button id="btnMoreCards">Show more cards</button>
+          <p>120 Cards</p>
+        </div>
+        <div id="spinner" role="status"></div>
+      </main>
     <footer>
         <div class="footerContainer">
             <img src="./assets/logo.png" alt="logo Pokemon">
@@ -81,6 +90,6 @@
             </div>
         </div>
     </footer>
-    <script src="./scripts/index.js"></script>
-  </body>
+    <script src="./scripts/buyCarsLight.js"></script> 
+</body>
 </html>
