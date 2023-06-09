@@ -46,10 +46,10 @@ body.dark{
 header {
     justify-content: space-between;
     background-color: #306bb3;
-    height: 72px;
+    height: 100px;
     display: flex;
     align-items: center;
-    padding: 0 12px;
+    padding: 0 40px;
 }
 
 header>div{
@@ -60,8 +60,8 @@ header>div{
 }
 
 header > img {
-    width: 50%;
-    max-width: 150px;
+    width: 150px;
+    height: 55px;
 }
 
 .listMenu{
@@ -100,7 +100,10 @@ main>img{
 }
 
 main section p {
+    width: 350px;
+    height: 20px;
     color: var(--font-color);
+    padding-top: 80px;
 }
 
 main>section>div>a{
@@ -121,21 +124,26 @@ section{
 }
 
 h1 {
-    font-weight: bold;
+    width: 574px;
+    height: 158px;
+    font-weight:bold;
     text-transform: uppercase;
-    font-size: 25px;
+    font-size: 40px;
     color: var(--font-color);
+    padding-top: 45px;
     
 }
 
 .sectionParrafo {
-    width:515px;
+    padding-top: 20px;
+    width:534px;
+    height: 142px;
     size: 16px;
     color: var(--font-color);
  }
 
  .btnLinks {
-    
+    font-weight:bold;   
     border-radius: 4px;
     background: var(--btnLinks-bg);
  }
@@ -156,8 +164,8 @@ footer {
 }
 
 .footerContainer>img {
-    width: 200px;
-    height: 70px;
+    width: 150px;
+    height: 55px;
 }
 
 .footerContainer>p {
