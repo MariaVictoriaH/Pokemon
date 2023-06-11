@@ -1,102 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./styles/buyCarsLight.css" />
-    <title>Buy cars Light</title>
+  <link rel="stylesheet" href="./styles/buyCarsLight.css" />
+  <title>Buy cars Light</title>
 </head>
+
 <body>
-    <header>
-        <img src="./assets/logo.png" alt="Logo de pokémon" />
-            <div>
-                <nav class="menu">
-                  <ul class="listMenu">
-                    <li><a class="listOpciones" href="/Pokemon/index.html">Home</a></li>
-                    <li><a class="listOpciones" href="/Pokemon/buyCarsLight.html">BuyCards</a></li>
-                    <li><a class="listOpciones" href="">Our Blog</a></li>
-                  </ul>
-                </nav>
-                <button class="btnPrincipal" id="mode">Dark Mode</button>
-            </div>
-    </header>
-    <main>
+  <header>
+    <img src="./assets/logo.png" alt="Logo de pokémon" />
+    <div>
+      <nav class="menu">
+        <ul class="listMenu">
+          <li><a class="listOpciones" href="/Pokemon/index.html">Home</a></li>
+          <li><a class="listOpciones" href="/Pokemon/buyCarsLight.html">BuyCards</a></li>
+          <li><a class="listOpciones" href="">Our Blog</a></li>
+        </ul>
+      </nav>
+      <button class="btnPrincipal" id="mode">Dark Mode</button>
+    </div>
+  </header>
+  <main>
+    <section>
+      <div class="info">
         <h1>Checkout Out Pokemon Cards</h1>
-        <br />
-        <p>The Pokemon Go expansion for the Pokemon Trading Card</p>
-        <p>Game will release soon.</p>
-        <br />
-        <div class="tab">
-          <button class="tablinks" onclick="selectTab(event, 'All')">All</button>
-          <button class="tablinks" onclick="selectTab(event, 'Air')">Air</button>
-          <button class="tablinks" onclick="selectTab(event, 'Fire')">Fire</button>
-          <button class="tablinks" onclick="selectTab(event, 'Water')">Water</button>
-          <div class="line"></div>
-        </div>
-        <section>
-          <div id="All" class="tabcontent active">
-            <div class="container" id="containerPokemon"></div>
-          </div>
-          <div id="Air" class="tabcontent">
-            <h3>FILTRAR POKEMONES AIR</h3>
-          </div>
-          <div id="Fire" class="tabcontent">
-            <h3>FILTRAR POKEMONES FIRE</h3>
-          </div>
-          <div id="Water" class="tabcontent">
-            <h3>FILTRAR POKEMONES WATER</h3>
-          </div>
-        </section>
-        <div>
-          <button id="btnMoreCards" class="moreCards">Show more cards</button>
-          <p>120 Cards</p>
-        </div>
-        <div id="spinner" role="status"></div>
-        <br>
-      </main>
-    <footer>
-        <div class="footerContainer">
-            <img src="./assets/logo.png" alt="logo Pokemon">
-            <p>Our vision is to provide convenience and help increase your sales business.</p>
-            <div>
-                <img src="./assets/logofacebook.png" alt="logo página Facebook">
-                <img src="./assets/logotwitter.png" alt="logo página Twitter">
-                <img src="./assets/logoinstagram.png" alt="logo página Instagram">
-            </div>
-        </div>
+        <p>The Pokemon Go expansion for the Pokemon Trading Card Game will release soon.</p>
+      </div>
+      <ul class="nav">
+        <a href="" class="navType"><li>All</li></a>
+        <a href="" class="navType"><li>Air</li></a>
+        <a href="" class="navType"><li>Fire</li></a>
+        <a href="" class="navType"><li>Water</li></a>
+      </ul>
+
+      <div class="container" id="containerPokemon">
+
+      </div>
+      <div>
+        <button id="btnMoreCards" class="moreCards">Show more cards</button>
+        <p>120 Cards</p>
+      </div>
+    </section>
     
-        <div class="ref">
-            <div class="About">
-                <p>About</p>
-                <a href="">How it works</a>
-                <a href="">Featured</a>
-                <a href="">Parnership</a>
-                <a href="">Bussiness Relation</a>
-            </div>
-             <div class="Community">
-                <p>Community</p>
-                <a href="">Events</a>
-                <a href="">Blog</a>
-                <a href="">Podcast</a>
-                <a href="">Invite a friend</a>
-            </div>
-    
-            <div class="Socials">
-                <p>Socials</p>
-                <a href="">Dicord</a>
-                <a href="">Instagram</a>
-                <a href="">Twitter</a>
-                <a href="">Facebook</a>
-            </div>
-        </div>
-    </footer>
-    <script src="./scripts/buyCarsLight.js"></script> 
+    <div id="spinner" role="status"></div>
+    <br>
+  </main>
+  <footer>
+    <div class="footerContainer">
+      <img src="./assets/logo.png" alt="logo Pokemon">
+      <p>Our vision is to provide convenience and help increase your sales business.</p>
+      <div>
+        <img src="./assets/logofacebook.png" alt="logo página Facebook">
+        <img src="./assets/logotwitter.png" alt="logo página Twitter">
+        <img src="./assets/logoinstagram.png" alt="logo página Instagram">
+      </div>
+    </div>
+
+    <div class="ref">
+      <div class="About">
+        <p>About</p>
+        <a href="">How it works</a>
+        <a href="">Featured</a>
+        <a href="">Parnership</a>
+        <a href="">Bussiness Relation</a>
+      </div>
+      <div class="Community">
+        <p>Community</p>
+        <a href="">Events</a>
+        <a href="">Blog</a>
+        <a href="">Podcast</a>
+        <a href="">Invite a friend</a>
+      </div>
+
+      <div class="Socials">
+        <p>Socials</p>
+        <a href="">Dicord</a>
+        <a href="">Instagram</a>
+        <a href="">Twitter</a>
+        <a href="">Facebook</a>
+      </div>
+    </div>
+  </footer>
+  <script src="./scripts/buyCarsLight.js"></script>
 </body>
 </html>
