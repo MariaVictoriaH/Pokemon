@@ -84,7 +84,6 @@ header>img {
 .ul{
     display: flex;
     gap: 30px;
-    list-style: none;
 }
 
 main{
@@ -131,8 +130,9 @@ main>div{
 .container{
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    width: 90%;
-    margin-left: 8%;
+    width: 80%;
+    margin-left: 12%;
+    margin-bottom: 2%;
 }
 
 .container >div>img{
@@ -185,6 +185,7 @@ section>div>div>div{
   }
 
   .moreCards {
+    text-align: center;
     width: 156px;
     height: 44px;
     background: var(--btn-bg-secund);
@@ -192,6 +193,13 @@ section>div>div>div{
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
+  }
+
+  .loadMore{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left: 31%;
   }
 
   .btnBuy {
@@ -205,9 +213,10 @@ section>div>div>div{
   .nav {
     display: flex;
     justify-content: space-around;
-    width: 83%;
-    margin-left: 8%;
+    width: 76%;
+    margin-left: 12%;
     font-size: 22px;
+    margin-bottom: 2%;
   }
 
   .navType {
