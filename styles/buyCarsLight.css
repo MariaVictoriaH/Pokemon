@@ -111,19 +111,21 @@ main>div{
 
 .info {
   text-align: center;
+  align-content: center;
   width: 100%;
 }
 
 .info h1{
   font-size: 48px;
   color: #486284;
-  padding-bottom: 4%;
+  padding-bottom: 2%;
  }
 
 .info p{
  font-size: 18px;
- background: #306BB3;
- align-content: center;
+ width: 25%;
+ margin-left: 37%;
+ padding-bottom: 2%;
  }
 
 .container{
