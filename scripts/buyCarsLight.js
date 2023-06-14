@@ -1,4 +1,4 @@
-const listPokemon = document.getElementById("containerPokemon");
+const containerPokemon = document.getElementById("containerPokemon");
 const btnMoreCards = document.getElementById('btnMoreCards');
 const pokemones = [];
 
@@ -69,33 +69,36 @@ btnMoreCards.addEventListener('click', () => {
 
 
 function createPokemon(pokemon) {
-  const div = document.createElement("div");
-  const pokeName = document.createElement("p");
-  const img = document.createElement("img");
-  const powerLevel = document.createElement("p");
-  const button = document.createElement("button");
-  const divCardHeader = document.createElement("div");
-  const divCardFooter = document.createElement("div");
-  const i = document.createElement("i");
+  const card = document.createElement('div');
+  const cardHeader = document.createElement('div');
+  const name = document.createElement('p');
+  const icon = document.createElement('i');
+  const img = document.createElement('img');
+  const CardFooter = document.createElement('div');
+  const powerName = document.createElement('p');
+  const button = document.createElement('button');
 
-  div.classList.add("item");
-  pokeName.textContent = `Name:  ${pokemon.name}`;
-  pokeName.classList.add("name");
-  i.classList.add("heart");
-  img.classList.add("fondoImagen");
-  button.classList.add('btnBuy');
+  name.textContent = `Name:  ${pokemon.name}`;
   img.src = pokemon.sprites.other["official-artwork"].front_shiny,
-  powerLevel.textContent = `Power level:  ${pokemon.base_experience}`;
+  powerName.textContent = `Power level:  ${pokemon.base_experience}`;
   button.textContent = "Buy";
-  listPokemon.appendChild(div);
-  divCardHeader.appendChild(pokeName);
-  divCardHeader.appendChild(i);
-  div.appendChild(divCardHeader);
 
-  div.appendChild(img);
-  divCardFooter.appendChild(powerLevel);
-  divCardFooter.appendChild(button);
-  div.appendChild(divCardFooter);
+
+  name.classList.add('name');
+  icon.className = 'fa-sharp fa-regular fa-heart';
+  img.classList.add('bgImg');
+  button.classList.add('btnBuy');
+  
+  cardHeader.appendChild(name);
+  cardHeader.appendChild(icon);
+  card.appendChild(cardHeader);
+  card.appendChild(img);
+  CardFooter.appendChild(powerName);
+  CardFooter.appendChild(button);
+  card.appendChild(CardFooter);
+
+  containerPokemon.appendChild(card);
+    
 }
 
   for (let i = 1; i <= loadCards; i++) {

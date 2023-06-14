@@ -94,7 +94,7 @@ main{
 main>p{
     size: 18;
     text-align: center;
-    color: #1A202C;
+    color: var(--font-color);
     margin-block: 15px;
 }
 
@@ -125,6 +125,7 @@ main>div{
  width: 25%;
  margin-left: 37%;
  padding-bottom: 2%;
+ color: var(--font-color);
  }
 
 .container{
@@ -144,7 +145,6 @@ main>div{
 }
 
 .name{
-    padding-left: 10px;
     padding-inline-end: 20px;
     padding-top: 15px;
     font-weight:bold;
@@ -170,7 +170,7 @@ section>div>div>div{
     justify-content: space-around;
 }
 
-.fondoImagen{
+.bgImg{
     width: 10px;
     height: 10px;
     background: white;
@@ -178,13 +178,7 @@ section>div>div>div{
     padding: 20px;
 }
 
-.heart::before {
-    content: '\f004';
-    font-family: 'Font Awesome 6 free';
-    font-weight: 400;
-  }
-
-  .moreCards {
+.moreCards {
     text-align: center;
     width: 156px;
     height: 44px;
@@ -220,7 +214,7 @@ section>div>div>div{
   }
 
   .navType {
-    color:#596479;
+    color: var(--font-color);
     margin: 2% 0;
     width: 100%;
     padding-bottom: 1%;
@@ -235,6 +229,12 @@ section>div>div>div{
   font-weight: bold;
   border-bottom: 4px solid #1A202C;
 }
+
+.active {
+    color:#1A202C;
+  font-weight: bold;
+  border-bottom: 4px solid #1A202C;
+  }
 
 footer {
     display: flex;
