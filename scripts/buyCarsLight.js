@@ -5,6 +5,7 @@ const navType = [...document.getElementsByClassName('navType')];
 const pokemones = [];
 
 let mode = document.getElementById('mode');
+let countCards = 0;
 let loadCards = 8;
 let offSet = 1;
 let urlApi = "https://pokeapi.co/api/v2/pokemon/";
@@ -26,10 +27,13 @@ function fetchPokemons(offSet, loadCards) {
     .then((res) => res.json())
     .then((data) => {
       createPokemon(data);
-      document.getElementById('totalCards').innerHTML = loadCards;
       spinner.style.display = "none";
     });
   }
+  countCards += loadCards;
+
+  const countPokemones = document.getElementById('totalCards');
+  countPokemones.textContent = `${countCards}  Cards`;
 }
 
 function createPokemon(pokemon) {
@@ -52,20 +56,20 @@ function createPokemon(pokemon) {
   icon.className = 'fa-sharp fa-regular fa-heart';
   img.classList.add('bgImg');
   button.classList.add('btnBuy');
-  
+
+  card.appendChild(cardHeader);
   cardHeader.appendChild(name);
   cardHeader.appendChild(icon);
-  card.appendChild(cardHeader);
   card.appendChild(img);
   CardFooter.appendChild(powerName);
   CardFooter.appendChild(button);
   card.appendChild(CardFooter);
 
+  card.setAttribute('type', PokemonType);
+
   containerPokemon.appendChild(card);
 
-  card.setAttribute('type', PokemonType);
-  
-}
+ }
 
 btnMoreCards.addEventListener('click', () => {
   offSet += 7;
@@ -83,16 +87,15 @@ navType.forEach((type) =>{
 const filterType = (type) =>{
   const cards = document.querySelectorAll('.container');
   cards.forEach((card) => {
-    console.log('ingresa al código');
+    console.log(card);
 
-    const cardType = card.getAtribute('type');
-    
-
+    const cardType = card.getAttribute('type');
+    console.log(cardType);
     if (type === 'all' || cardType === type ) {
-      card.classList.remove('hidden');
+      cards.classList.remove('hidden');
 
     }else{
-      card.classList.add('hidden');
+      cards.classList.add('hidden');
     }
   });
 }
