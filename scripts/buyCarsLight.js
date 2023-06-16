@@ -1,72 +1,36 @@
-const containerPokemon = document.getElementById("containerPokemon");
+const containerPokemon = document.getElementById('containerPokemon');
 const btnMoreCards = document.getElementById('btnMoreCards');
+const navType = [...document.getElementsByClassName('navType')];
+
 const pokemones = [];
 
-let toggle = document.getElementById('mode');
+let mode = document.getElementById('mode');
 let loadCards = 8;
 let offSet = 1;
 let urlApi = "https://pokeapi.co/api/v2/pokemon/";
 
 
-
-toggle.addEventListener('click', () => {
+mode.addEventListener('click', () => {
   document.body.classList.toggle('dark');
-  if(toggle.textContent == 'Dark Mode'){
-      toggle.textContent = 'Light Mode'
+  if(mode.textContent == 'Dark Mode'){
+    mode.textContent = 'Light Mode'
   }else{
-      toggle.textContent = 'Dark Mode'
+    mode.textContent = 'Dark Mode'
   }
 })
-
-
-
-function selectTab(evt, tabName) {
-  let i, tabcontent, tablinks, line;
-  line = document.querySelector('.line')
-  line.style.width = evt.target.offSetWidth + 'px';
-  line.style.left = evt.target.offSetLeft + 'px';
-  if (selectTab =='All'){
-    fetchPokemons(offSet, loadCards);
-  }
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace("active", "");
-  }
-  
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += "active";
-}
-
-
-
-
 
 function fetchPokemons(offSet, loadCards) {
   spinner.style.display = 'block';
   for (let i = offSet; i <= offSet + loadCards - 1; i++) {
-    fetchPokemon(i);
-  }
-}
-
-function fetchPokemon(id) {
-  fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+    fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`)
     .then((res) => res.json())
     .then((data) => {
       createPokemon(data);
+      document.getElementById('totalCards').innerHTML = loadCards;
       spinner.style.display = "none";
     });
+  }
 }
-
-
-btnMoreCards.addEventListener('click', () => {
-  offSet += 7;
-  fetchPokemons(offSet, loadCards);
-});
-
 
 function createPokemon(pokemon) {
   const card = document.createElement('div');
@@ -77,12 +41,12 @@ function createPokemon(pokemon) {
   const CardFooter = document.createElement('div');
   const powerName = document.createElement('p');
   const button = document.createElement('button');
+  const PokemonType = pokemon.types[0].type.name;
 
   name.textContent = `Name:  ${pokemon.name}`;
   img.src = pokemon.sprites.other["official-artwork"].front_shiny,
   powerName.textContent = `Power level:  ${pokemon.base_experience}`;
   button.textContent = "Buy";
-
 
   name.classList.add('name');
   icon.className = 'fa-sharp fa-regular fa-heart';
@@ -98,234 +62,39 @@ function createPokemon(pokemon) {
   card.appendChild(CardFooter);
 
   containerPokemon.appendChild(card);
+
+  card.setAttribute('type', PokemonType);
+  
+}
+
+btnMoreCards.addEventListener('click', () => {
+  offSet += 7;
+  fetchPokemons(offSet, loadCards);
+});
+
+navType.forEach((type) =>{
+  type.addEventListener('click', (event) =>{
+    event.preventDefault();
+    const filter = type.textContent.toLocaleLowerCase();
+    filterType(filter);
+  });
+});
+
+const filterType = (type) =>{
+  const cards = document.querySelectorAll('.container');
+  cards.forEach((card) => {
+    console.log('ingresa al código');
+
+    const cardType = card.getAtribute('type');
     
+
+    if (type === 'all' || cardType === type ) {
+      card.classList.remove('hidden');
+
+    }else{
+      card.classList.add('hidden');
+    }
+  });
 }
 
-  for (let i = 1; i <= loadCards; i++) {
-    fetch(urlApi + i)
-      .then((response) => response.json())
-      .then((data) => createPokemon(data));
-  }
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Llamo una única vez a la Api y asigno el resultado a un arreglo 
-function loadPokemonesApi()
-{
-  fetch(urlApi)
-    .then((res) => res.json())
-    .then((data) => {
-      //pokemones.push(data);
-      data.results.forEach((pokemon) => {
-        console.log(pokemon);
-        const div = document.createElement("div");
-        const pokeName = document.createElement("p");
-        const img = document.createElement("img");
-        const powerLevel = document.createElement("p");
-        const button = document.createElement("button");
-        const divCardHeader = document.createElement("div");
-        const divCardFooter = document.createElement("div");
-        const i = document.createElement("i");
-      
-        div.classList.add("item");
-        pokeName.textContent = `Name:  ${pokemon.name}`;
-        pokeName.classList.add("name");
-        i.classList.add("heart");
-        img.classList.add("fondoImagen");
-        img.src = pokemon.sprites.other["official-artwork"].front_shiny,
-        powerLevel.textContent = `Power level:  ${pokemon.base_experience}`;
-        button.textContent = "Buy";
-        listPokemon.appendChild(div);
-        divCardHeader.appendChild(pokeName);
-        divCardHeader.appendChild(i);
-        div.appendChild(divCardHeader);
-      
-        div.appendChild(img);
-        divCardFooter.appendChild(powerLevel);
-        divCardFooter.appendChild(button);
-        div.appendChild(divCardFooter);
-        
-      });
-
-
-      
-    });
-}
-
-function createPokemon(pokemon) {
-  console.log(pokemon);
-  const div = document.createElement("div");
-  const pokeName = document.createElement("p");
-  const img = document.createElement("img");
-  const powerLevel = document.createElement("p");
-  const button = document.createElement("button");
-  const divCardHeader = document.createElement("div");
-  const divCardFooter = document.createElement("div");
-  const i = document.createElement("i");
-
-  div.classList.add("item");
-  pokeName.textContent = `Name:  ${pokemon.name}`;
-  pokeName.classList.add("name");
-  i.classList.add("heart");
-  img.classList.add("fondoImagen");
- // img.src = pokemon.sprites.other["official-artwork"].front_shiny,
-  powerLevel.textContent = `Power level:  ${pokemon.base_experience}`;
-  button.textContent = "Buy";
-  listPokemon.appendChild(div);
-  divCardHeader.appendChild(pokeName);
-  divCardHeader.appendChild(i);
-  div.appendChild(divCardHeader);
-
-  div.appendChild(img);
-  divCardFooter.appendChild(powerLevel);
-  divCardFooter.appendChild(button);
-  div.appendChild(divCardFooter);
-}
-
-function selectTab(evt, tabName) {
-  let i, tabcontent, tablinks, line;
-  line = document.querySelector('.line')
-  line.style.width = evt.target.offSetWidth + 'px';
-  line.style.left = evt.target.offSetLeft + 'px';
-  if (selectTab =='All'){
-    fetchPokemons(offSet, loadCards);
-  }
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace("active", "");
-  }
-  
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += "active";
-}
-
-
-  loadPokemonesApi();
-
-  */
-
-
-
-
-
-
-/* Llamo una única vez a la Api y asigno el resultado a un arreglo 
-function loadPokemonesApi()
-{
-  fetch(urlApi)
-    .then((res) => res.json())
-    .then((data) => {
-      //pokemones.push(data);
-      data.results.forEach((pokemon) => {
-        console.log(pokemon);
-        const div = document.createElement("div");
-        const pokeName = document.createElement("p");
-        const img = document.createElement("img");
-        const powerLevel = document.createElement("p");
-        const button = document.createElement("button");
-        const divCardHeader = document.createElement("div");
-        const divCardFooter = document.createElement("div");
-        const i = document.createElement("i");
-      
-        div.classList.add("item");
-        pokeName.textContent = `Name:  ${pokemon.name}`;
-        pokeName.classList.add("name");
-        i.classList.add("heart");
-        img.classList.add("fondoImagen");
-        img.src = pokemon.sprites.other["official-artwork"].front_shiny,
-        powerLevel.textContent = `Power level:  ${pokemon.base_experience}`;
-        button.textContent = "Buy";
-        listPokemon.appendChild(div);
-        divCardHeader.appendChild(pokeName);
-        divCardHeader.appendChild(i);
-        div.appendChild(divCardHeader);
-      
-        div.appendChild(img);
-        divCardFooter.appendChild(powerLevel);
-        divCardFooter.appendChild(button);
-        div.appendChild(divCardFooter);
-        
-      });
-
-
-      
-    });
-}
-
-function createPokemon(pokemon) {
-  console.log(pokemon);
-  const div = document.createElement("div");
-  const pokeName = document.createElement("p");
-  const img = document.createElement("img");
-  const powerLevel = document.createElement("p");
-  const button = document.createElement("button");
-  const divCardHeader = document.createElement("div");
-  const divCardFooter = document.createElement("div");
-  const i = document.createElement("i");
-
-  div.classList.add("item");
-  pokeName.textContent = `Name:  ${pokemon.name}`;
-  pokeName.classList.add("name");
-  i.classList.add("heart");
-  img.classList.add("fondoImagen");
- // img.src = pokemon.sprites.other["official-artwork"].front_shiny,
-  powerLevel.textContent = `Power level:  ${pokemon.base_experience}`;
-  button.textContent = "Buy";
-  listPokemon.appendChild(div);
-  divCardHeader.appendChild(pokeName);
-  divCardHeader.appendChild(i);
-  div.appendChild(divCardHeader);
-
-  div.appendChild(img);
-  divCardFooter.appendChild(powerLevel);
-  divCardFooter.appendChild(button);
-  div.appendChild(divCardFooter);
-}
-
-function selectTab(evt, tabName) {
-  let i, tabcontent, tablinks, line;
-  line = document.querySelector('.line')
-  line.style.width = evt.target.offSetWidth + 'px';
-  line.style.left = evt.target.offSetLeft + 'px';
-  if (selectTab =='All'){
-    fetchPokemons(offSet, loadCards);
-  }
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace("active", "");
-  }
-  
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += "active";
-}
-
-
-  loadPokemonesApi();
-
-  */
+fetchPokemons(offSet, loadCards)
