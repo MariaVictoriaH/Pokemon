@@ -85,17 +85,14 @@ navType.forEach((type) =>{
 });
 
 const filterType = (type) =>{
-  const cards = document.querySelectorAll('.container');
+  const cards = document.getElementById('containerPokemon').querySelectorAll('div');
   cards.forEach((card) => {
-    console.log(card);
-
     const cardType = card.getAttribute('type');
-    console.log(cardType);
+    
     if (type === 'all' || cardType === type ) {
-      cards.classList.remove('hidden');
-
+      card.classList.remove('hidden');
     }else{
-      cards.classList.add('hidden');
+      card.classList.add('hidden');
     }
   });
 }
