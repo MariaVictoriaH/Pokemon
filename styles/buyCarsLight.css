@@ -9,6 +9,7 @@
 :root {
     --light: #ffffff;
     --dark: #1A202C;
+    --bg-card:#DEE5ED;
     
     --soft-blue:#486284;
     --btn-color:#306BB3;
@@ -17,7 +18,7 @@
     --soft-blue:#FFFFFF;
 
     --btn-bg-secund:#306BB3;
-     
+       
  }
 
  body{
@@ -25,6 +26,8 @@
     --btn-bg: #FFFFFF;
     --btn-fontcolor:#306BB3;
     --font-color: #1A202C;
+    --font-colorsecund:#486284;
+    --font-color-hover:#1A202C;
 }
 
 body.dark{
@@ -33,6 +36,8 @@ body.dark{
    --btnLinks-bg:#FFFFFF;
    --btn-fontcolor:#FFFFFF;
    --font-color: #FFFFFF;
+   --font-colorsecund:#FFFFFF;
+   --font-color-hover:#FFFFFF;
 }
 
 header {
@@ -119,7 +124,7 @@ main>div{
 
 .info h1{
   font-size: 48px;
-  color: #486284;
+  color: var(--font-colorsecund);
   padding-bottom: 2%;
  }
 
@@ -131,6 +136,15 @@ main>div{
  color: var(--font-color);
  }
 
+ a {
+    color: var(--font-colorsecund);
+}
+
+#totalCards{
+    color: var(--font-colorsecund);
+    font-size: 20px;
+}
+ 
 .container{
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
@@ -156,7 +170,6 @@ main>div{
 section>div>div{
     width: 304px;
     height: 410px;
-    background-color: #DEE5ED;
     border-radius: 10px;
     margin: 5px;
 }
@@ -179,6 +192,10 @@ section>div>div>div{
     background: white;
     border-radius: 10px;
     padding: 20px;
+}
+
+.card{
+    background: var(--bg-card);
 }
 
 .moreCards {
@@ -217,7 +234,7 @@ section>div>div>div{
   }
 
   .navType {
-    color: var(--font-color);
+    color: var(--font-colorsecund);
     margin: 2% 0;
     width: 100%;
     padding-bottom: 1%;
@@ -227,7 +244,7 @@ section>div>div>div{
   }
 
 .navType:hover {
-  color:#1A202C;
+  color: var(--font-color-hover);
   font-weight: bold;
   border-bottom: 4px solid #1A202C;
 }
