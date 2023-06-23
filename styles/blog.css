@@ -12,23 +12,23 @@
 
 body {
     background: var(--light);
-    display: grid;
     margin: 0;
-    --black-russian: #1A202C;
-    --soft-blue:#486284;
+    --color-text: #1A202C;
+    --color-title:#486284;
     --btn-color:#306BB3;
     --btn-bg: #FFFFFF;
+    
 }
 
 body.dark {
     background: var(--dark);
-    --black-russian: #FFFFFF;
-    --soft-blue:#FFFFFF;
+    --color-text: #FFFFFF;
+    --color-title:#FFFFFF;
     --btn-color:#FFFFFF;
     --btn-bg: #1A202C;
-
   }
- 
+
+  
 .btnMode {
     width: 82px;
     height: 38px;
@@ -40,10 +40,10 @@ body.dark {
  header {
   justify-content: space-between;
   background-color: #306bb3;
-  height: 72px;
+  height: 100px;
   display: flex;
   align-items: center;
-  padding: 0 12px;
+  padding: 0 40px;
 }
 
 header>div{
@@ -57,6 +57,48 @@ header > img {
     width: 50%;
     max-width: 150px;
 }
+
+main{
+    padding: 90px;
+}
+
+.title{
+    position: fixed;
+}
+
+.title h2{
+    color: var(--color-title);
+    text-align: center;
+    font-size: 48px;
+    width: 100%;
+}
+
+.title h4 {
+    text-align: center;
+    font-size: 18px;
+    color:var(--color-text);
+    width: 95%;
+  }
+
+  .detalle {
+    padding-top: 170px;
+    display: flex;
+    justify-content:space-around;
+    width: 75%;
+  }
+
+  .detalle img {
+    width: 565px;
+    height: 528px;
+  }
+
+  .detalle p {
+    text-align: justify;
+    color: var(--color-text);
+    font-size: 20px;
+    width: 55%;
+    padding-top: 25px;
+  }
 
 .listMenu{
     display: flex;
@@ -78,37 +120,6 @@ header > img {
     display: flex;
     gap: 30px;
     list-style: none;
-}
-
-main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-main img {
-    width: 565px;
-    height: 528px;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-
-h1 {
-  padding: 60px;
-  align-content: center;
-  font-size: 48px;
-  color:var(--soft-blue);
-}
-
-h4 {
-    font-size: 18px;
-    color:var(--black-russian);
-  }
-
-p {
-   color: var(--black-russian);
-   
 }
 
 footer {
