@@ -17,10 +17,22 @@ mode.addEventListener('click', () => {
   document.body.classList.toggle('dark');
   if(mode.textContent == 'Dark Mode'){
     mode.textContent = 'Light Mode'
+    localStorage.setItem('thema','Light')
   }else{
     mode.textContent = 'Dark Mode'
+    localStorage.setItem('thema','Dark')
   }
 })
+
+const saveThema = () => {
+  if (localStorage.getItem('thema') === 'Light'){
+      document.body.classList.remove('dark');
+  }else{
+        document.body.classList.add('dark');
+  }
+}
+
+saveThema();
 
 function fetchPokemons(offSet, loadCards) {
   for (let i = offSet; i <= offSet + loadCards - 1; i++) {
@@ -28,6 +40,9 @@ function fetchPokemons(offSet, loadCards) {
     .then((res) => res.json())
     .then((data) => {
       createPokemon(data);
+    })
+    .catch((error) =>{
+      alert('Se presentó un error en la API. Por favor validar la Url indicada',error);
     });
   }
   countCards += loadCards;
