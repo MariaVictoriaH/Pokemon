@@ -196,7 +196,12 @@ section>div>div>div{
 
 .card{
     background: var(--bg-card);
+    transition: background 1s linear;
 }
+
+.card:hover{
+    background:#F8D030;
+} 
 
 .moreCards {
     text-align: center;
