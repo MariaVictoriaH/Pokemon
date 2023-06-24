@@ -62,7 +62,7 @@ function createPokemon(pokemon) {
   const PokemonType = pokemon.types[0].type.name;
 
   name.textContent = `Name:  ${pokemon.name}`;
-  img.src = pokemon.sprites.other["official-artwork"].front_shiny,
+  img.src = pokemon.sprites.other.dream_world.front_default,
   powerName.textContent = `Power level:  ${pokemon.base_experience}`;
   button.textContent = "Buy";
 
