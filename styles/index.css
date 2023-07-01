@@ -5,33 +5,23 @@
 }
 
 :root {
-    --light: #ffffff;
-    --dark: #1A202C;
-    
-    --soft-blue:#486284;
-    --btn-color:#306BB3;
-    
-    --black-russian: #FFFFFF;
-    --soft-blue:#FFFFFF;
-     
+    --mode: #FFFFFF;
+    --btn-bg: #FFFFFF;
  }
 
- body{
-     background: var(--light);
-     display: grid;
-     margin: 0;
-     --btn-bg: #FFFFFF;
-     --btn-fontcolor:#306BB3;
-     --font-color: #1A202C;
-}
-
 body.dark{
-    background: var(--dark);
+    --mode: #1A202C;
     --btn-bg: #1A202C;
     --btnLinks-bg:#FFFFFF;
     --btn-fontcolor:#FFFFFF;
     --font-color: #FFFFFF;
 }
+
+body{
+    display: grid;
+    margin: 0;
+    background:var(--mode) ;
+ }
 
 .btnPrincipal {
   border: none;
@@ -41,7 +31,6 @@ body.dark{
   background-color: var(--btn-bg);
   color: var(--btn-fontcolor);
 }
-
 
 header {
     justify-content: space-between;
