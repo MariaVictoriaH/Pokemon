@@ -2,37 +2,40 @@ const containerPokemon = document.getElementById('containerPokemon');
 const btnMoreCards = document.getElementById('btnMoreCards');
 const navType = [...document.getElementsByClassName('navType')];
 const countPokemones = document.getElementById('totalCards');
+const mode = document.getElementById('mode');
+const themeCurrent = localStorage.getItem('theme');
 
 
 const pokemones = [];
 
-let mode = document.getElementById('mode');
+
 let countCards = 0;
 let loadCards = 8;
 let offSet = 1;
 let urlApi = "https://pokeapi.co/api/v2/pokemon/";
 
 
-mode.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  if(mode.textContent == 'Dark Mode'){
-    mode.textContent = 'Light Mode'
-    localStorage.setItem('thema','Light')
-  }else{
-    mode.textContent = 'Dark Mode'
-    localStorage.setItem('thema','Dark')
-  }
-})
-
-const saveThema = () => {
-  if (localStorage.getItem('thema') === 'Light'){
-      document.body.classList.remove('dark');
-  }else{
-        document.body.classList.add('dark');
+const changeTheme = () => {
+  if (mode.textContent === 'Dark Mode'){
+      mode.textContent = 'Light Mode';
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+  } else {
+    mode.textContent = 'Dark Mode';
+    document.documentElement.setAttribute('data-theme', null);
+    localStorage.setItem('theme', null);
   }
 }
 
-saveThema();
+mode.addEventListener('click', changeTheme);
+
+if (themeCurrent){
+   document.documentElement.setAttribute('data-theme', themeCurrent);
+}
+
+if (themeCurrent === 'dark'){
+   mode.click = true;
+ }
 
 function fetchPokemons(offSet, loadCards) {
   for (let i = offSet; i <= offSet + loadCards - 1; i++) {
@@ -46,7 +49,6 @@ function fetchPokemons(offSet, loadCards) {
     });
   }
   countCards += loadCards;
-
   countPokemones.textContent = `${countCards}  Cards`;
 }
 
@@ -68,7 +70,7 @@ function createPokemon(pokemon) {
 
   card.classList.add('card');
   name.classList.add('name');
-  icon.className = 'fa-sharp fa-regular fa-heart';
+  icon.className =  'fa-sharp fa-regular fa-heart';
   img.classList.add('bgImg');
   button.classList.add('btnBuy');
 
@@ -81,7 +83,6 @@ function createPokemon(pokemon) {
   card.appendChild(CardFooter);
 
   card.setAttribute('type', PokemonType);
-
   containerPokemon.appendChild(card);
 
  }
