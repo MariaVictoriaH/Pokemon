@@ -171,7 +171,7 @@ footer {
     padding-top: 15%;
 }
 
-.footerContainer>div>img {
+.footerContainer>div>a>img {
     background-color: white;
     width: 33.6px;
     height: 33.6px;
