@@ -12,7 +12,6 @@
 body.dark{
     --mode: #1A202C;
     --btn-bg: #1A202C;
-    --btnLinks-bg:#FFFFFF;
     --btn-fontcolor:#FFFFFF;
     --font-color: #FFFFFF;
 }
@@ -134,7 +133,7 @@ h1 {
  .btnLinks {
     font-weight:bold;   
     border-radius: 4px;
-    background: var(--btnLinks-bg);
+    color: var(--font-color);
  }
 
 footer {
