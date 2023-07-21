@@ -1,6 +1,6 @@
 const containerPokemon = document.getElementById('containerPokemon');
 const btnMoreCards = document.getElementById('btnMoreCards');
-const navType = [...document.getElementsByClassName('navType')];
+const navType = document.querySelectorAll('.navType');
 const countPokemones = document.getElementById('totalCards');
 const mode = document.getElementById('mode');
 const themeCurrent = localStorage.getItem('theme');
@@ -62,8 +62,8 @@ function createPokemon(pokemon) {
   const powerName = document.createElement('p');
   const button = document.createElement('button');
   const PokemonType = pokemon.types[0].type.name;
-
-  name.textContent = `Name:  ${pokemon.name}`;
+  
+  name.textContent = `Name:  ${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}`;
   img.src = pokemon.sprites.other.dream_world.front_default,
   powerName.textContent = `Power level:  ${pokemon.base_experience}`;
   button.textContent = "Buy";
@@ -94,6 +94,9 @@ btnMoreCards.addEventListener('click', () => {
 
 navType.forEach((type) =>{
   type.addEventListener('click', (event) =>{
+    const tabActive = document.querySelector('.tabActive');
+    tabActive.classList.replace('tabActive','tabInactive');
+    event.target.classList.replace('tabInactive','tabActive');
     event.preventDefault();
     const filter = type.textContent.toLocaleLowerCase();
     filterType(filter);
