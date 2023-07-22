@@ -44,9 +44,11 @@
       <div class="container" id="containerPokemon">
       </div>
       <div class="loadMore">
-        <button id="btnMoreCards" class="moreCards">Show more cards</button>
+        <button class="moreCards" id="btnMoreCards">Show more cards</button>
         <p id="totalCards"></p>
+        
       </div>
+      <a class="goUp fas fa-chevron-up" href="#" onclick="window.scrollTo(0,0)"></a>
     </section>
     <br>
   </main>
@@ -90,6 +92,12 @@
       </div>
     </div>
   </footer>
+  <dialog id="modal">
+    <h3>Hola, nos encontramos en desarrollo de esta funcionalidad, por favor tenos mucha fé </h3>
+    <br>
+    <img src="./assets/guino.png" alt="emoticon con Guiño" />
+    <button id="closeModal">Cerrar</button>
+  </dialog>
   <script src="./scripts/buyCarsLight.js"></script>
 </body>
 </html>
