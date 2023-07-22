@@ -4,6 +4,8 @@ const navType = document.querySelectorAll('.navType');
 const countPokemones = document.getElementById('totalCards');
 const mode = document.getElementById('mode');
 const themeCurrent = localStorage.getItem('theme');
+const modal = document.querySelector('#modal');
+const closeModal = document.querySelector('#closeModal')
 
 
 const pokemones = [];
@@ -50,6 +52,7 @@ function fetchPokemons(offSet, loadCards) {
   }
   countCards += loadCards;
   countPokemones.textContent = `${countCards}  Cards`;
+  
 }
 
 function createPokemon(pokemon) {
@@ -84,7 +87,7 @@ function createPokemon(pokemon) {
 
   card.setAttribute('type', PokemonType);
   containerPokemon.appendChild(card);
-
+ 
  }
 
 btnMoreCards.addEventListener('click', () => {
@@ -120,4 +123,12 @@ const filterType = (type) =>{
   });
 }
 
+  containerPokemon.addEventListener('click', () => {
+    modal.showModal();
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.close();
+  });
+  
 fetchPokemons(offSet, loadCards)
