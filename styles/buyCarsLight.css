@@ -21,7 +21,7 @@
     --bg-color: black;
     --font-color:#ffffff;
  }
-
+   
  body{
     background: var(--bg-color);
     color: var(--font-color);
@@ -243,6 +243,7 @@ section>div>div>div{
     border-radius: 4px;
     background: #306BB3;
     color: #FFFFFF;
+    cursor: pointer;
   }
 
   .nav {
@@ -281,6 +282,47 @@ section>div>div>div{
     border-bottom: 0.5px solid grey;
     font-weight: normal;
     width: 100%;
+ }
+
+ .goUp {
+    width: 3rem;
+    height: 3rem;
+    font-weight: bold;
+    color:#DEE5ED;
+    background: #306BB3;
+    border-radius: 50%;
+    font-size: 1.7rem;
+    text-align: center;
+    text-justify: inherit;
+    position: absolute; 
+    left: 95%; 
+        
+ }
+ #modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.55);
+    
+ }
+ #modal {
+    width: 45%;
+    height: 50%;
+    top: 30%;
+    left: 25%;
+    font-size: 28px;
+    border-color: white;
+    text-align: center;
+ }
+
+ #modal>button {
+    height: 44px;
+    width: 116px;
+    border-radius: 4px;
+    background: #306BB3;
+    color: #FFFFFF;
+    cursor: pointer;
+    position: absolute; 
+    left: 86%; 
+    bottom: 0;
+    
  }
 
 footer {
