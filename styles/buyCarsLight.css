@@ -143,14 +143,14 @@ i{
 .container{
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    width: 80%;
-    margin-left: 12%;
+    width: 85%;
+    margin-left: 8%;
     margin-bottom: 2%;
 }
 
 .container >div>img{
-    height: 280px;
-    width: 250px;
+    height: 270px;
+    width: 190px;
     align-items: center;
     margin-left: 25px;
     margin-top: 25px;
@@ -164,10 +164,10 @@ i{
 }
 
 section>div>div{
-    width: 304px;
-    height: 410px;
+    width: 260px;
+    height: 390px;
     border-radius: 10px;
-    margin: 5px;
+    margin: 10px;
 }
 
 section>div>div>div{
@@ -238,8 +238,8 @@ section>div>div>div{
   }
 
   .btnBuy {
-    height: 44px;
-    width: 116px;
+    height: 35px;
+    width: 70px;
     border-radius: 4px;
     background: #306BB3;
     color: #FFFFFF;
@@ -249,8 +249,8 @@ section>div>div>div{
   .nav {
     display: flex;
     justify-content: space-around;
-    width: 76%;
-    margin-left: 12%;
+    width: 80%;
+    margin-left: 8%;
     font-size: 22px;
     margin-bottom: 2%;
   }
