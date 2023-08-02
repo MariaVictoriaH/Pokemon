@@ -22,7 +22,7 @@ body{
     background:var(--mode) ;
  }
 
-.btnPrincipal {
+ .btnPrincipal {
   border: none;
   min-width: 82px;
   min-height: 38px;
@@ -35,6 +35,7 @@ header {
     justify-content: space-between;
     background-color: #306bb3;
     height: 100px;
+    width: 100%;
     display: flex;
     align-items: center;
     padding: 0 40px;
@@ -48,7 +49,7 @@ header>div{
 }
 
 header > img {
-    width: 150px;
+    width: 140px;
     height: 55px;
 }
 
@@ -57,7 +58,7 @@ header > img {
     flex-direction: row;
     list-style: none;
     justify-content: space-between;
-    gap: 0 36px;
+    gap: 0 20px;
     align-items: center;
 }
 
@@ -70,21 +71,21 @@ header > img {
 
 .ul{
     display: flex;
-    gap: 30px;
+    gap: 20px;
     list-style: none;
 }
 
 main{
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content:space-between;
     padding: 90px;
-    gap: 20px;
 }
 
 main>img{
-    width: 638px;
-    height: 508px;
+    width: 520px;
+    height: 510px;
+    
 }
 
 main section p {
@@ -140,7 +141,8 @@ footer {
     display: flex;
     flex-direction: row;
     background-color: #306bb3;
-    height: 380PX;
+    height: 380px;
+    width: 100%;
     
 }
 
