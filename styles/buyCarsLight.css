@@ -150,9 +150,9 @@ i{
 
 .container >div>img{
     height: 270px;
-    width: 190px;
+    width: 200px;
     align-items: center;
-    margin-left: 25px;
+    margin-left: 29px;
     margin-top: 25px;
 }
 
@@ -184,11 +184,9 @@ section>div>div>div{
 }
 
 .bgImg{
-    width: 10px;
-    height: 10px;
     background: white;
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .card{
@@ -303,10 +301,10 @@ section>div>div>div{
     
  }
  #modal {
-    width: 45%;
-    height: 50%;
-    top: 30%;
-    left: 25%;
+    width: 60%;
+    height: 70%;
+    top: 10%;
+    left: 20%;
     font-size: 28px;
     border-color: white;
     text-align: center;
@@ -314,7 +312,7 @@ section>div>div>div{
 
  #modal>button {
     height: 44px;
-    width: 116px;
+    width: 110px;
     border-radius: 4px;
     background: #306BB3;
     color: #FFFFFF;
