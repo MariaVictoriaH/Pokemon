@@ -7,7 +7,6 @@
 :root {
     --light: #ffffff;
     --dark: #1A202C;
-    
  }
 
 body {
@@ -17,8 +16,7 @@ body {
     --color-title:#486284;
     --btn-color:#306BB3;
     --btn-bg: #FFFFFF;
-    
-}
+ }
 
 body.dark {
     background: var(--dark);
@@ -28,8 +26,7 @@ body.dark {
     --btn-bg: #1A202C;
   }
 
-  
-.btnMode {
+ .btnMode {
     width: 82px;
     height: 38px;
     border-radius: 4px;
@@ -57,49 +54,7 @@ header > img {
     width: 50%;
     max-width: 150px;
 }
-
-main{
-    padding: 90px;
-}
-
-.title{
-    position: fixed;
-}
-
-.title h2{
-    color: var(--color-title);
-    text-align: center;
-    font-size: 48px;
-    width: 100%;
-}
-
-.title h4 {
-    text-align: center;
-    font-size: 18px;
-    color:var(--color-text);
-    width: 95%;
-  }
-
-  .detalle {
-    padding-top: 170px;
-    display: flex;
-    justify-content:space-around;
-    width: 75%;
-  }
-
-  .detalle img {
-    width: 565px;
-    height: 528px;
-  }
-
-  .detalle p {
-    text-align: justify;
-    color: var(--color-text);
-    font-size: 20px;
-    width: 55%;
-    padding-top: 25px;
-  }
-
+  
 .listMenu{
     display: flex;
     flex-direction: row;
@@ -122,11 +77,56 @@ main{
     list-style: none;
 }
 
-footer {
+ main>div {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 25px;
+  }
+ 
+  main>div>h1 {
+    font-size: 48px;
+    font-weight:500;
+	text-align: center;
+	color: var(--color-title);
+    
+  }
+
+ main>div>p {
+    font-size: 18px;
+    color:var(--color-text);
+    text-align: center;
+    width: 38%;
+  }
+  
+  section {
+    display: flex;
+    justify-content:space-around;
+    gap: 5px;
+  }
+
+  section>img {
+    padding-top: 80px;
+    padding-bottom: 10px;
+    align-self: center;
+    width: 565px;
+    height: 528px;
+  }
+
+  section>p {
+    align-self: center;
+    width: 50%;
+    color:var(--color-text);
+  }
+  
+  
+  footer {
     display: flex;
     flex-direction: row;
     background-color: #306bb3;
-    height: 380PX;
+    height: 380px;
+    width: 100%;
     
 }
 
@@ -138,8 +138,8 @@ footer {
 }
 
 .footerContainer>img {
-    width: 200px;
-    height: 70px;
+    width: 150px;
+    height: 55px;
 }
 
 .footerContainer>p {
@@ -156,7 +156,7 @@ footer {
     padding-top: 15%;
 }
 
-.footerContainer>div>img {
+.footerContainer>div>a>img {
     background-color: white;
     width: 33.6px;
     height: 33.6px;
@@ -205,6 +205,7 @@ footer {
     color: white;
     opacity: 70%;
     text-decoration: none;
-}  
+}
+ 
 
   
