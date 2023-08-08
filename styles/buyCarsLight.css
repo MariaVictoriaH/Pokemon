@@ -9,13 +9,9 @@
 :root {
     --bg-color: #ffffff;
     --font-color: #1A202C;
-    --soft-blue:#486284;
     --btn-color:#306BB3;
-    --black-russian: #FFFFFF;
-    --soft-blue:#FFFFFF;
     --btn-bg-secund:#306BB3;
-       
- }
+}
  
  [data-theme = 'dark']{
     --bg-color: black;
@@ -51,7 +47,7 @@ header>img {
     max-width: 150px;
 }
 
-.btnPrincipal {
+.btnMode {
   border: none;
   min-width: 82px;
   min-height: 38px;
@@ -68,7 +64,7 @@ header>img {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 0 36px;
+    gap: 0 20px;
     align-items: center;
 }
 
@@ -327,7 +323,7 @@ footer {
     display: flex;
     flex-direction: row;
     background-color: #306bb3;
-    height: 380px;
+    height: 330px;
  }
 
 .footerContainer {
@@ -376,25 +372,23 @@ footer {
     display: flex;
     flex-direction: column;
     color: white;
-    gap: 15%;
+    gap: 5%;
     font-size: 20px;
-
 }
 
 .Community {
     display: flex;
     flex-direction: column;
     color: white;
-    gap: 15%;
+    gap: 5%;
     font-size: 20px;
-
 }
 
 .Socials {
     display: flex;
     flex-direction: column;
     color: white;
-    gap: 15%;
+    gap: 5%;
     font-size: 20px;
 
 }

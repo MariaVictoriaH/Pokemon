@@ -5,24 +5,28 @@
 }
 
 :root {
-    --mode: #FFFFFF;
-    --btn-bg: #FFFFFF;
+    --bg-color: #ffffff;
+    --font-color: #1A202C;
+    --btn-color:#306BB3;
+    --btn-bg-secund:#306BB3;
  }
 
-body.dark{
-    --mode: #1A202C;
-    --btn-bg: #1A202C;
-    --btn-fontcolor:#FFFFFF;
-    --font-color: #FFFFFF;
-}
+ [data-theme = 'dark']{
+    --bg-color: black;
+    --font-color:#ffffff;
+ }
 
 body{
     display: grid;
     margin: 0;
-    background:var(--mode) ;
+    background: var(--bg-color);
+    color: var(--font-color);
+    --btn-bg: #FFFFFF;
+    --btn-fontcolor:#306BB3;
+    --font-colorsecund:#486284;
  }
 
- .btnPrincipal {
+ .btnMode {
   border: none;
   min-width: 82px;
   min-height: 38px;
@@ -48,9 +52,9 @@ header>div{
     align-items: center;
 }
 
-header > img {
-    width: 140px;
-    height: 55px;
+header>img {
+    width: 50%;
+    max-width: 150px;
 }
 
 .listMenu{
@@ -141,8 +145,7 @@ footer {
     display: flex;
     flex-direction: row;
     background-color: #306bb3;
-    height: 380px;
-    width: 100%;
+    height: 315px;
     
 }
 
@@ -192,7 +195,7 @@ footer {
     display: flex;
     flex-direction: column;
     color: white;
-    gap: 15%;
+    gap: 5%;
     font-size: 20px;
 
 }
@@ -201,7 +204,7 @@ footer {
     display: flex;
     flex-direction: column;
     color: white;
-    gap: 15%;
+    gap: 5%;
     font-size: 20px;
 
 }
@@ -210,7 +213,7 @@ footer {
     display: flex;
     flex-direction: column;
     color: white;
-    gap: 15%;
+    gap: 5%;
     font-size: 20px;
 
 }
