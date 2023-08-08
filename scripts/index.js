@@ -1,11 +1,27 @@
-let toggle = document.getElementById('mode');
+let mode = document.getElementById('mode');
+const themeCurrent = localStorage.getItem('theme');
+const myLocalStorage = localStorage;
 
-toggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    if(toggle.textContent == 'Dark Mode'){
-        toggle.textContent = 'Light Mode'
-    }else{
-        toggle.textContent = 'Dark Mode'
+const changeTheme = () => {
+    if (mode.textContent === 'Dark Mode'){
+        mode.textContent = 'Light Mode';
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    } else {
+      mode.textContent = 'Dark Mode';
+      document.documentElement.setAttribute('data-theme', null);
+      localStorage.setItem('theme', null);
     }
-})
+  }
+  
+  mode.addEventListener('click', changeTheme);  
+ 
+  if (themeCurrent){
+     document.documentElement.setAttribute('data-theme', themeCurrent);
+  }
+  
+  if (themeCurrent === 'dark'){
+     mode.click = true;
+   }
+  
 
